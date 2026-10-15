@@ -1,5 +1,6 @@
 package br.com.zenon.fraud;
 
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,9 +13,10 @@ import java.util.List;
 
 public class TransactionIngestor {
     List<Transaction> transactions = new ArrayList<>();
-
-    public TransactionIngestor(String fileName) throws IOException {
+    private int limite;
+    public TransactionIngestor(String fileName, int limite) throws IOException {
         Path filePath = Paths.get("data/" + fileName);
+        this.limite = limite;
 
 
         if (Files.exists(filePath)) {
@@ -58,11 +60,11 @@ public class TransactionIngestor {
         return this.transactions;
     }
 
-    public void imprime(List<Transaction> transactionsList, int limite) {
+    public void imprime(List<Transaction> transactionsList) {
         int c1 = 0;
 
         for (Transaction tx : transactionsList) {
-            if(c1 < limite) {
+            if(c1 < this.limite) {
                 c1 ++;
                 IO.println(c1 + ": " + tx);
 

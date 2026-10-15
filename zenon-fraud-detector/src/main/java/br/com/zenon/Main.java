@@ -32,9 +32,8 @@ public class Main {
         IO.println("Transação1: " + transaction1);
         IO.println("Transação2: " + transaction2);
         String filename = "PS_20174392719_1491204439457_log.csv";
-        TransactionIngestor ingestor = new TransactionIngestor(filename);
-        int limite = 10;
-        ingestor.imprime(ingestor.getTransactions(), limite);
+        TransactionIngestor ingestor = new TransactionIngestor(filename, 10);
+        ingestor.imprime(ingestor.getTransactions());
 
     }
 
