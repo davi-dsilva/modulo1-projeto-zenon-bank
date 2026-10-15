@@ -2,14 +2,16 @@ package br.com.zenon;
 
 import br.com.zenon.fraud.Transaction;
 import br.com.zenon.fraud.TransactionCustomer;
+import br.com.zenon.fraud.TransactionIngestor;
 import br.com.zenon.fraud.TransactionType;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
+    static void main() throws IOException {
 
         Transaction transaction1 = new Transaction(
                 1,
@@ -29,7 +31,12 @@ public class Main {
 
         IO.println("Transação1: " + transaction1);
         IO.println("Transação2: " + transaction2);
-
+        String filename = "PS_20174392719_1491204439457_log.csv";
+        TransactionIngestor ingestor = new TransactionIngestor(filename);
+        int limite = 10;
+        ingestor.imprime(ingestor.getTransactions(), limite);
 
     }
+
+
 }
