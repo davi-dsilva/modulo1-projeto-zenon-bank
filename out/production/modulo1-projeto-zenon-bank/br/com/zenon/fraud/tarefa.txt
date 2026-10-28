@@ -1,0 +1,9 @@
+Crie uma branch chamada tarefa/03-ingestao-dados para trabalhar nesta tarefa. Ao final, não esqueça de fazer o commit e push na sua branch da tarefa.
+
+Crie a classe TransactionIngestor, responsável pela ingestão de dados de transaçōes do PaySim. Essa classe deve receber um nome de arquivo e retornar uma List<Transaction>
+
+Leia apenas as primeiras 1.000 linhas do CSV.
+
+Faça o parsing manual da linha, instancie o Record Transaction e guarde em uma List<Transaction>.
+
+Na classe Main que testa a nova classe passando o nome do arquivo CSV do PaySim, imprimindo as 10 primeiras transações importadas. O resultado deve ser semelhante ao seguinte:
